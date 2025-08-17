@@ -8,10 +8,3 @@ df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |> 
     select(sales_ymd, customer_id, product_cd, amount) |>
     filter(customer_id == "CS018205000001", amount >= 1000)
-
-# A tibble: 3 × 4
-#   sales_ymd customer_id    product_cd amount
-#       <dbl> <chr>          <chr>       <dbl>
-# 1  20180911 CS018205000001 P071401012   2200
-# 2  20190226 CS018205000001 P071401020   2200
-# 3  20180911 CS018205000001 P071401005   1100

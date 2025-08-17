@@ -11,17 +11,3 @@ df_receipt |>
     mutate(rank = row_number(desc(amount))) |> 
     arrange(rank) |> 
     slice_head(n = 10)
-
-# A tibble: 10 × 3
-#    customer_id    amount  rank
-#    <chr>           <dbl> <int>
-#  1 CS011415000006  10925     1
-#  2 ZZ000000000000   6800     2
-#  3 CS028605000002   5780     3
-#  4 CS015515000034   5480     4
-#  5 ZZ000000000000   5480     5
-#  6 ZZ000000000000   5480     6
-#  7 ZZ000000000000   5440     7
-#  8 CS021515000089   5440     8
-#  9 CS015515000083   5280     9
-# 10 CS017414000114   5280    10

@@ -11,8 +11,3 @@ df_receipt |>
         customer_id == "CS018205000001",
         between(amount, 1000, 2000)
     )
-
-# A tibble: 1 × 4
-#   sales_ymd customer_id    product_cd amount
-#       <dbl> <chr>          <chr>       <dbl>
-# 1  20180911 CS018205000001 P071401005   1100

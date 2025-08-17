@@ -11,12 +11,3 @@ df_receipt |>
         customer_id == "CS018205000001",
         amount >= 1000 | quantity >= 5
     )
-
-# A tibble: 5 × 5
-#   sales_ymd customer_id    product_cd quantity amount
-#       <dbl> <chr>          <chr>         <dbl>  <dbl>
-# 1  20180911 CS018205000001 P071401012        1   2200
-# 2  20180414 CS018205000001 P060104007        6    600
-# 3  20170614 CS018205000001 P050206001        5    990
-# 4  20190226 CS018205000001 P071401020        1   2200
-# 5  20180911 CS018205000001 P071401005        1   1100
