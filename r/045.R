@@ -6,5 +6,6 @@ library(tidyverse)
 
 df_customer <- read_csv("./data/customer.csv")
 df_customer |> 
-    select(customer_id, birth_day)
-    
+    select(customer_id, birth_day) |> 
+    mutate(birth_day = format(birth_day, "%Y%m%d")) |> 
+    slice_head(n = 10)
