@@ -3,11 +3,6 @@
 # ただし、売上実績がない顧客については売上金額を0として表示させること。
 # また、顧客は性別コード（gender_cd）が女性（1）であるものを対象とし、非会員（顧客IDが"Z"から始まるもの）は除外すること。
 
-library(tidyverse)
-
-df_receipt <- read_csv("./data/receipt.csv")
-df_customer <- read_csv("./data/customer.csv")
-
 left_join(
   df_customer,
   df_receipt |> summarize(amount = sum(amount), .by = "customer_id"),

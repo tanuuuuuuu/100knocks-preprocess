@@ -2,10 +2,6 @@
 # レシート明細データから、売上日数の多い顧客の上位20件を抽出したデータと、売上金額合計の多い顧客の上位20件を抽出したデータをそれぞれ作成し、さらにその2つを完全外部結合せよ。
 # ただし、非会員（顧客IDが"Z"から始まるもの）は除外すること。
 
-library(tidyverse)
-
-df_receipt <- read_csv("./data/receipt.csv")
-
 df_receipt_common <- df_receipt |> 
 	filter(!str_starts(customer_id, "Z"))
 

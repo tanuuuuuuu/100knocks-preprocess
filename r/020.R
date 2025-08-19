@@ -3,9 +3,6 @@
 # 項目は顧客ID（customer_id）、売上金額（amount）、付与したランクを表示させること。
 # なお、売上金額が等しい場合でも別順位を付与すること。
 
-library(tidyverse)
-
-df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
   select(customer_id, amount) |> 
   mutate(rank = row_number(desc(amount))) |> 
