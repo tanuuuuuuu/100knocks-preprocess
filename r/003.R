@@ -5,5 +5,5 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |> 
-    select(sales_date = sales_ymd, customer_id, product_cd, amount) |> 
-    slice_head(n = 10)
+  select(sales_date = sales_ymd, customer_id, product_cd, amount) |> 
+  slice_head(n = 10)

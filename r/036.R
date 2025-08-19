@@ -7,8 +7,8 @@ df_receipt <- read_csv("./data/receipt.csv")
 df_store <- read_csv("./data/store.csv")
 
 inner_join(
-    df_receipt,
-    df_store |> select(store_cd, store_name),
-    by = "store_cd"
+  df_receipt,
+  df_store |> select(store_cd, store_name),
+  by = "store_cd"
 ) |> 
-    slice_head(n = 10)
+  slice_head(n = 10)

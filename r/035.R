@@ -6,8 +6,8 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    filter(!str_starts(customer_id, "Z")) |>
-    summarize(amount = sum(amount), .by = customer_id) |> 
-    mutate(mean_amount = mean(amount)) |> 
-    filter(amount >= mean_amount) |> 
-    slice_head(n = 10)
+  filter(!str_starts(customer_id, "Z")) |>
+  summarize(amount = sum(amount), .by = customer_id) |> 
+  mutate(mean_amount = mean(amount)) |> 
+  filter(amount >= mean_amount) |> 
+  slice_head(n = 10)

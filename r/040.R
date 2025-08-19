@@ -8,4 +8,4 @@ df_store <- read_csv("./data/store.csv")
 df_product <- read_csv("./data/product.csv")
 
 cross_join(df_store, df_product) |> 
-    count()
+  count()

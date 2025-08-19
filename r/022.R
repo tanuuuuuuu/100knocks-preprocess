@@ -5,5 +5,5 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    distinct(customer_id) |> 
-    count()
+  distinct(customer_id) |> 
+  count()

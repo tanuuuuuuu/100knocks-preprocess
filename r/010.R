@@ -5,5 +5,5 @@ library(tidyverse)
 
 df_store <- read_csv("./data/store.csv")
 df_store |>
-    filter(str_starts(store_cd, "S14")) |> 
-    slice_head(n = 10)
+  filter(str_starts(store_cd, "S14")) |> 
+  slice_head(n = 10)

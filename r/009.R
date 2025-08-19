@@ -6,7 +6,7 @@ library(tidyverse)
 
 df_store <- read_csv("./data/store.csv")
 df_store |> 
-    filter(
-        prefecture_cd != "13",
-        floor_area <= 900
-    )
+  filter(
+    prefecture_cd != "13",
+    floor_area <= 900
+  )

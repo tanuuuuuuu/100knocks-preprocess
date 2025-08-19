@@ -7,7 +7,7 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    select(customer_id, amount) |> 
-    mutate(rank = min_rank(desc(amount))) |> 
-    arrange(rank) |> 
-    slice_head(n = 10)
+  select(customer_id, amount) |> 
+  mutate(rank = min_rank(desc(amount))) |> 
+  arrange(rank) |> 
+  slice_head(n = 10)

@@ -5,4 +5,4 @@ library(tidyverse)
 
 df_store <- read_csv("./data/store.csv")
 df_store |> 
-    filter(str_detect(tel_no, r"(^[0-9]{3}-[0-9]{3}-[0-9]{4}$)"))
+  filter(str_detect(tel_no, r"(^[0-9]{3}-[0-9]{3}-[0-9]{4}$)"))

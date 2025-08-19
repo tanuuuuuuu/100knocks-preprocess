@@ -5,5 +5,5 @@ library(tidyverse)
 
 df_customer <- read_csv("./data/customer.csv")
 df_customer |>
-    filter(str_starts(status_cd, r"([A-F])")) |> 
-    slice_head(n = 10)
+  filter(str_starts(status_cd, r"([A-F])")) |> 
+  slice_head(n = 10)

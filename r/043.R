@@ -10,15 +10,13 @@ df_receipt <- read_csv("./data/receipt.csv")
 df_customer <- read_csv("./data/customer.csv")
 
 df_43 <- inner_join(df_customer, df_receipt, by = "customer_id") |> 
-    mutate(
-        age_bin = age %/% 10 * 10,
-    ) |> 
-    summarize(amount = sum(amount), .by = c(age_bin, gender_cd)) |>
-    pivot_wider(names_from = gender_cd, values_from = amount) |>
-    select(
-        age_bin,
-        male = `0`,
-        female = `1`,
-        unknown = `9`,
-    ) |> 
-    arrange(age_bin)
+  mutate(age_bin = age %/% 10 * 10) |> 
+  summarize(amount = sum(amount), .by = c(age_bin, gender_cd)) |>
+  pivot_wider(names_from = gender_cd, values_from = amount) |>
+  select(
+    age_bin,
+    male = `0`,
+    female = `1`,
+    unknown = `9`,
+  ) |> 
+  arrange(age_bin)

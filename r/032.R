@@ -5,10 +5,10 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    summarise(
-        min = quantile(amount, 0),
-        q1 = quantile(amount, 0.25),
-        q2 = quantile(amount, 0.5),
-        q3 = quantile(amount, 0.75),
-        max = quantile(amount, 1),
-    )
+  summarise(
+    min = quantile(amount, 0),
+    q1  = quantile(amount, 0.25),
+    q2  = quantile(amount, 0.5),
+    q3  = quantile(amount, 0.75),
+    max = quantile(amount, 1),
+  )

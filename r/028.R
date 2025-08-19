@@ -5,6 +5,6 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    summarise(avg_amount = median(amount), .by = store_cd) |> 
-    arrange(desc(avg_amount)) |> 
-    slice_head(n = 5)
+  summarise(avg_amount = median(amount), .by = store_cd) |> 
+  arrange(desc(avg_amount)) |> 
+  slice_head(n = 5)

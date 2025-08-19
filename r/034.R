@@ -6,6 +6,6 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    filter(!str_starts(customer_id, "Z")) |> 
-    summarize(amount = sum(amount), .by = customer_id) |> 
-    summarize(mean_amount = mean(amount))
+  filter(!str_starts(customer_id, "Z")) |> 
+  summarize(amount = sum(amount), .by = customer_id) |> 
+  summarize(mean_amount = mean(amount))

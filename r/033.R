@@ -5,8 +5,5 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    summarise(
-        mean_amount = mean(amount),
-        .by = store_cd
-    ) |> 
-    filter(mean_amount >= 330)
+  summarise(mean_amount = mean(amount), .by = store_cd) |> 
+  filter(mean_amount >= 330)

@@ -5,8 +5,5 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    summarize(
-        max = max(sales_ymd),
-        .by = customer_id
-    ) |> 
-    slice_head(n = 10)
+  summarize(max = max(sales_ymd), .by = customer_id) |> 
+  slice_head(n = 10)

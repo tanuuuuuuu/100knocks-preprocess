@@ -5,7 +5,7 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    group_by(store_cd, product_cd) |> 
-    summarize(n = n()) |> 
-    slice_max(order_by = n, n = 1) |> 
-    slice_head(n = 10)
+  group_by(store_cd, product_cd) |> 
+  summarize(n = n()) |> 
+  slice_max(order_by = n, n = 1) |> 
+  slice_head(n = 10)

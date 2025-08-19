@@ -6,8 +6,8 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |> 
-    select(sales_ymd, customer_id, product_cd, amount) |>
-    filter(
-        customer_id == "CS018205000001",
-        product_cd != "P071401019"
-    )
+  select(sales_ymd, customer_id, product_cd, amount) |>
+  filter(
+    customer_id == "CS018205000001",
+    product_cd != "P071401019"
+  )

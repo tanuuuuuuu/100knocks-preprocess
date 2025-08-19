@@ -5,9 +5,6 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    summarise(
-        stds_amount = sd(amount) * (n() - 1) / n(),
-        .by = store_cd
-    ) |> 
-    arrange(desc(stds_amount)) |> 
-    slice_head(n = 5)
+  summarise(stds_amount = sd(amount) * (n() - 1) / n(), .by = store_cd) |> 
+  arrange(desc(stds_amount)) |> 
+  slice_head(n = 5)

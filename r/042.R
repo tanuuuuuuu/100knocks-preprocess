@@ -6,11 +6,11 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    summarize(amount = sum(amount), .by = sales_ymd) |> 
-    arrange(sales_ymd) |> 
-    mutate(
-        lag_1_amount = lag(amount, n = 1, order_by = sales_ymd),
-        lag_2_amount = lag(amount, n = 2, order_by = sales_ymd),
-        lag_3_amount = lag(amount, n = 3, order_by = sales_ymd)
-    ) |> 
-    slice_head(n = 10)
+  summarize(amount = sum(amount), .by = sales_ymd) |> 
+  arrange(sales_ymd) |> 
+  mutate(
+    lag_1_amount = lag(amount, n = 1, order_by = sales_ymd),
+    lag_2_amount = lag(amount, n = 2, order_by = sales_ymd),
+    lag_3_amount = lag(amount, n = 3, order_by = sales_ymd)
+  ) |> 
+  slice_head(n = 10)

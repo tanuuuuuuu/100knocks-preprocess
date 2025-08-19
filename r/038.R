@@ -9,14 +9,14 @@ df_receipt <- read_csv("./data/receipt.csv")
 df_customer <- read_csv("./data/customer.csv")
 
 left_join(
-    df_customer,
-    df_receipt |> summarize(amount = sum(amount), .by = "customer_id"),
-    by = "customer_id"
+  df_customer,
+  df_receipt |> summarize(amount = sum(amount), .by = "customer_id"),
+  by = "customer_id"
 ) |> 
-    filter(
-        gender_cd == 1,
-        !str_starts(customer_id, "Z")
-    ) |>
-    mutate(amount = coalesce(amount, 0)) |> 
-    select(customer_id, amount) |> 
-    slice_head(n = 10)
+  filter(
+    gender_cd == 1,
+    !str_starts(customer_id, "Z")
+  ) |>
+  mutate(amount = coalesce(amount, 0)) |> 
+  select(customer_id, amount) |> 
+  slice_head(n = 10)

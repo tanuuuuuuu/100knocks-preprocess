@@ -7,8 +7,8 @@ df_product <- read_csv("./data/product.csv")
 df_category <- read_csv("./data/category.csv")
 
 inner_join(
-    df_product,
-    df_category |> select(category_small_cd, category_small_name),
-    by = "category_small_cd"
+  df_product,
+  df_category |> select(category_small_cd, category_small_name),
+  by = "category_small_cd"
 ) |> 
-    slice_head(n = 10)
+  slice_head(n = 10)

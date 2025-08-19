@@ -5,5 +5,5 @@ library(tidyverse)
 
 df_customer <- read_csv("./data/customer.csv")
 df_customer |> 
-    arrange(desc(birth_day)) |> 
-    slice_head(n = 10)
+  arrange(desc(birth_day)) |> 
+  slice_head(n = 10)

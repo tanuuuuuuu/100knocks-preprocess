@@ -5,8 +5,8 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    summarize(
-        amount = sum(amount),
-        quantity = sum(quantity),
-        .by = store_cd
-    )
+  summarize(
+    amount   = sum(amount),
+    quantity = sum(quantity),
+    .by      = store_cd
+  )

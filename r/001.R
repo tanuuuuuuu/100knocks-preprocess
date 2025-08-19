@@ -4,4 +4,4 @@ library(tidyverse)
 
 df_receipt <- read_csv("./data/receipt.csv")
 df_receipt |>
-    slice_head(n = 10)
+  slice_head(n = 10)

@@ -5,4 +5,4 @@ library(tidyverse)
 
 df_store <- read_csv("./data/store.csv")
 df_store |> 
-    filter(str_detect(address, "横浜市"))
+  filter(str_detect(address, "横浜市"))
