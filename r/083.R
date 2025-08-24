@@ -1,0 +1,12 @@
+# 数値補完（カテゴリごとの中央値） / カテゴリごとに算出した中央値で欠損値を保管する（level1）
+# 単価（unit_price）と原価（unit_cost）の欠損値について、各商品のカテゴリ小区分コード（category_small_cd）ごとに算出した中央値で補完した新たな商品データを作成せよ。
+# なお、中央値については1円未満を丸めること（四捨五入または偶数への丸めで良い）。
+# 補完実施後、各項目について欠損が生じていないことも確認すること。
+
+df_product |>
+  mutate(
+    unit_price = replace_na(unit_price, round(median(unit_price, na.rm = TRUE))),
+    unit_cost  = replace_na(unit_cost, round(median(unit_cost, na.rm = TRUE))),
+    .by        = category_small_cd
+  ) |> 
+  map_dbl(~ sum(is.na(.)))
